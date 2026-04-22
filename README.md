@@ -274,6 +274,11 @@ CMakeCache.txt
 
 ### Evaluation Notes
 
+
+### Notes
+- This repository includes `CMakeLists.txt` to build an executable named `code`.
+- The core implementation is in `code.cpp`, following the problem skeleton and filling in TODOs only.
+
 - The evaluation system will test your program using the provided test data
 - The program output must exactly match the expected output (including format)
 - Exceeding time or memory limits will be judged as the corresponding error type
