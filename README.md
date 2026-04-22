@@ -242,6 +242,15 @@ make
 
 After this process is complete, we will use the `code` file in the project root directory as the compilation result.
 
+
+### Build Instructions (Local)
+
+- Ensure you have CMake and a C++17 compiler (g++-13 available locally)
+- From project root:
+  - cmake .
+  - make
+- The produced executable will be named `code`
+
 A `CMakeLists.txt` file is provided in the project. You can use or modify it as needed. The local environment has gcc-13 and g++-13 available.
 
 ### Git Configuration Requirements
