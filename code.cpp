@@ -1,5 +1,7 @@
 // DoublyLinkedList implementation for ACMOJ 2640. Non-functional comment for documentation.
 
+// Minor non-functional update: documentation tweak.
+
 #include <iostream>
 #include <memory>
 #include <optional>
