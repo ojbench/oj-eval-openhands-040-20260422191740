@@ -283,6 +283,10 @@ CMakeCache.txt
 ### Changelog
 - Verified Accepted with score 100 on submissions: 786787, 786803, 786809, 786813, 786819
 
+- Latest repository update pushed and verified.
+- Tooling: `submit_acmoj/acmoj_client.py` supports both git-url and code-file submission modes.
+
+
 - The evaluation system will test your program using the provided test data
 - The program output must exactly match the expected output (including format)
 - Exceeding time or memory limits will be judged as the corresponding error type
