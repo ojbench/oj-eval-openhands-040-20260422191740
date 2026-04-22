@@ -250,6 +250,8 @@ After this process is complete, we will use the `code` file in the project root 
   - cmake .
   - make
 - The produced executable will be named `code`
+- Tested locally with g++-13; no functional changes required for OJ.
+
 
 A `CMakeLists.txt` file is provided in the project. You can use or modify it as needed. The local environment has gcc-13 and g++-13 available.
 
@@ -282,6 +284,8 @@ CMakeCache.txt
 
 ### Changelog
 - Verified Accepted with score 100 on submissions: 786787, 786803, 786809, 786813, 786819
+
+- Repository status confirmed with latest pushes.
 
 - Latest repository update pushed and verified.
 - Tooling: `submit_acmoj/acmoj_client.py` supports both git-url and code-file submission modes.
