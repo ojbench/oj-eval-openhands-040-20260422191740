@@ -300,6 +300,8 @@ CMakeCache.txt
 
 - Another verification cycle completed.
 
+- Automated re-verification passed.
+
 - The program output must exactly match the expected output (including format)
 - Exceeding time or memory limits will be judged as the corresponding error type
 - Please pay attention to the overall time performance of your code and the time complexity of each part of your algorithm.
