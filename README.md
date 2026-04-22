@@ -308,6 +308,10 @@ CMakeCache.txt
 
 - Periodic check OK.
 
+- Health check OK.
+
+- Status heartbeat OK.
+
 - The program output must exactly match the expected output (including format)
 - Exceeding time or memory limits will be judged as the corresponding error type
 - Please pay attention to the overall time performance of your code and the time complexity of each part of your algorithm.
