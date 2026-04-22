@@ -110,11 +110,12 @@ def main():
     
     subparsers = parser.add_subparsers(dest="command", required=True)
 
-    # Submit code by Git repository URL
-    submit_parser = subparsers.add_parser("submit", help="Submit by Git repository URL")
+    # Submit code (either by Git repository URL or by code file)
+    submit_parser = subparsers.add_parser("submit", help="Submit solution")
     submit_parser.add_argument("--problem-id", type=int, required=True, help="Problem ID")
-    submit_parser.add_argument("--git-url", type=str, required=True,
-                               help="Git repository URL to submit")
+    submit_parser.add_argument("--git-url", type=str, required=False, help="Git repository URL to submit")
+    submit_parser.add_argument("--language", type=str, required=False, help="Programming language (e.g., cpp, c, python)")
+    submit_parser.add_argument("--code-file", type=str, required=False, help="Path to the source code file")
 
     # Sub-command for checking submission status
     status_parser = subparsers.add_parser("status", help="Check submission status")
@@ -133,7 +134,22 @@ def main():
     client = ACMOJClient(args.token)
 
     if args.command == "submit":
-        result = client.submit_git(args.problem_id, args.git_url)
+        if args.git_url:
+            result = client.submit_git(args.problem_id, args.git_url)
+        else:
+            if not args.language or not args.code_file:
+                print("Error: Either --git-url or both --language and --code-file must be provided.")
+                return
+            try:
+                with open(args.code_file, 'r', encoding='utf-8') as f:
+                    code_text = f.read()
+            except FileNotFoundError:
+                print(f"Error: Code file not found at {args.code_file}")
+                exit(1)
+            except Exception as e:
+                print(f"Error: Failed to read code file: {e}")
+                exit(1)
+            result = client.submit_code(args.problem_id, args.language, code_text)
 
     elif args.command == "status":
         result = client.get_submission_detail(args.submission_id)
